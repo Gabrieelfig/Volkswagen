@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Menu Hamburguer Fullscreen</title>
+    </head>
+
+  
+    <header>
+        <img src="fundovolks.png" width="1310" >
+        
+        </header>
+        <body>
+            <input id="menu-hamburguer" type="checkbox">
+            <label for="menu-hamburguer">
+                <div class="menu">
+                    <span class="hamburguer"></span>
+                </div>
+            </label>
+        
+            <ul>
+                <li><a href="file:///C:/Users/gabri/OneDrive/Desktop/volks/volkspag2.html">VOLKS</a>
+        
+        </body>
+<style>
+    *,
+    *:before,
+    *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing:border-box;
+    }
+    
+
+    body {
+        background: #000;
+    }
+
+    header {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+        color: #fff;
+    }
+
+    .menu {
+        background: #fff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        cursor: pointer;
+        box-shadow: 0 0 0 0px #fff, 0 0 0 0px #fff;
+        transition: box-shadow 0.5s ease-in-out;
+    }
+
+    .menu:hover{
+      box-shadow: 0 0 0 8px #fff, 0 0 0 8px #fff;
+    }
+
+    .hamburguer {
+        position:relative;
+        display: block;
+        background: #000;
+        width: 30px;
+        height: 2px;
+        top: 29px;
+        left: 15px;
+    }
+
+    .hamburguer:before,
+    .hamburguer:after {
+        background: #000;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: .5s ease-in-out;
+    }
+
+    .hamburguer:before {
+        top: -10px;
+    }
+
+    .hamburguer:after {
+        bottom: -10px;
+    }
+
+    input {
+        display: none;
+    }
+
+    input:checked ~ ul{
+        opacity: 1;
+    }
+
+
+    input:checked ~ label .menu{
+        box-shadow: 0 0 0 200vw #fff, 0 0 0 200vw #fff;
+
+    }
+
+    input:checked ~ label .hamburguer {
+        transform: rotate(45deg);
+    }
+
+    input:checked ~ label .hamburguer:after {
+        transform: rotate(90deg);
+        bottom: 0;
+    }
+
+    input:checked ~ label .hamburguer:before {
+        transform: rotate(90deg);
+        top: 0;
+    }
+
+    ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        opacity: 0;
+        transition: .25s ease-in-out;
+    } 
+
+    a {
+        display: block;
+        margin-bottom: 40px;
+        color:    #000;
+        font-size: 47px;
+        text-decoration: none;
+    }
+</style>
+
